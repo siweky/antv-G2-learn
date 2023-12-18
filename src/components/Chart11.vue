@@ -43,6 +43,9 @@ const renderChart = () => {
       fontSize: 60,
       textBaseline: 'middle',
     })
+  chart.on('element.POINTER_ENTER', (a, b, c) => {
+    console.log('element:click------', a, b, c)
+  });
   chart.render()
 }
 onMounted(() => {

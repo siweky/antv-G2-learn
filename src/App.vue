@@ -13,7 +13,8 @@
 // import ChartView from './components/Chart7.vue'
 // import ChartView from './components/Chart9.vue'
 // import ChartView from './components/Chart10.vue'
-import ChartView from './components/Chart11.vue'
+// import ChartView from './components/Chart11.vue'
+import ChartView from './components/Chart12.vue'
 </script>
 
 <style scoped>
