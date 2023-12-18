@@ -28,7 +28,7 @@ const renderChart = () => {
     .layout({
       spiral: 'rectangular',
       padding: 3,
-      random: 1,
+      random: 0.5,
       rotate: ((v, index) => {
         return 45 * (index % 4)
       }),
@@ -60,7 +60,7 @@ const renderChart = () => {
   // 鼠标移入显示tooltip
   chart.on(`element:${ChartEvent.POINTER_MOVE}`, (ev) => {
     // console.log('%c POINTER_MOVE', 'background: red', ev);
-    const { x, y } = ev.global;
+    const { x, y } = ev.client;
     const { text, value } = ev.data.data;
     const { fill } = ev.target.attributes;
     tooltipContainer.innerHTML = `
@@ -82,7 +82,7 @@ const renderChart = () => {
   chart.render();
 }
 onMounted(() => {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 20; i++) {
     _data.value.push({
       value: Math.ceil(Math.random() * 100),
       text: `标签${i}`,
@@ -96,6 +96,9 @@ onMounted(() => {
 </script>
 
 <style>
+#container {
+  border: 1px solid #111111;
+}
 .g2-tooltip {
   display: none;
   position: absolute;
