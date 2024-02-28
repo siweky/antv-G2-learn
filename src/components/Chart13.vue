@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <div id="container"></div>
   </div>
 </template>
@@ -15,7 +15,7 @@ const renderChart = () => {
   // 初始化图标实例
   const chart = new Chart({
     container: 'container',
-
+    autoFit: true
   });
 
   chart
@@ -97,9 +97,17 @@ onMounted(() => {
 </script>
 
 <style>
-#container {
-  border: 1px solid #111111;
+.main {
+  width: 800px;
+  height: 600px;
+  border: 1px solid orange;
 }
+#container {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid #111111; */
+}
+
 .g2-tooltip {
   display: none;
   position: absolute;
@@ -134,4 +142,5 @@ onMounted(() => {
 .g2-tooltip-value {
   margin-left: 30px;
   color: rgba(0, 0, 0, 0.85);
-}</style>
+}
+</style>
